@@ -94,15 +94,110 @@ setInterval(function()
      $(this).attr('src','images/gmailicon.jpg');
     }
   });
+ 
+
+ $("#btnplayed").click(function()
+ {
+    
+      $("#panelPlayed").html("");
+     $.getJSON("http://www.omdbapi.com/?s=power&page=1", function(data, status){
+        console.log(data);
+          var count=0;
+            $.each(data['Search'], function(key, value ) {
+            if(count<2)
+            {
+              $('#panelPlayed').append(
+                "<img src='" + value['Poster'] +"'/>");
+               jQuery('#panelPlayed').addClass("hidden").viewportChecker({
+               classToAdd: 'visible animated rollIn',
+               offset: 400
+             });
+
+            }
+            count++;
+              
+            });
+            
+        });
+
+      $.getJSON("http://www.omdbapi.com/?s=vampire&page=1", function(data, status){
+        console.log(data);
+          var count=0;
+            $.each(data['Search'], function(key, value ) {
+            if(count<2)
+            {
+              $('#panelPlayed').append(
+                "<img src='" + value['Poster'] +"'/>");
+            }
+            count++;
+              
+            });
+          
+        });
+});
+$("#btnAnt").click(function()
+{
+
+ jQuery('.ant').addClass("hidden").viewportChecker({
+               classToAdd: 'visible animated hinge',
+               offset: 200
+             });
+ jQuery('#btnAnt').addClass("hidden").viewportChecker({
+               classToAdd: 'visible animated hinge',
+               offset: 200
+             });
+
+ $.getJSON("http://www.omdbapi.com/?s=Lost&page=1", function(data, status){
+        console.log(data);
+          var count=0;
+            $.each(data['Search'], function(key, value ) {
+            if(count<2)
+            {
+              $('.panelA').append(
+                "<img src='" + value['Poster'] +"'/>");
+               
+               jQuery('.panelA').addClass("hidden").viewportChecker({
+               classToAdd: 'visible animated zoomIn',
+               offset: 400
+             });
+
+            }
+            count++;
+              
+            });
+            
+        });
+
+      $.getJSON("http://www.omdbapi.com/?s=teen wolf&page=1", function(data, status){
+        console.log(data);
+          var count=0;
+            $.each(data['Search'], function(key, value ) {
+            if(count<2)
+            {
+              $('.panelA').append(
+                "<img src='" + value['Poster'] +"'/>");
+              jQuery('.ant').addClass("hidden").viewportChecker({
+               classToAdd: 'visible animated hinge',
+               offset: 200
+             });
+            }
+            count++;
+              
+            });
+           
+          
+        });
 
 
 
+
+});
 
 
 
 $("#btntred").click(function()
 {
-   $("#panelTrend").html("");
+  $("#panelTrend").html("");
  $.getJSON("http://www.omdbapi.com/?s=Lost&page=1", function(data, status){
         console.log(data);
           var count=0;
@@ -111,9 +206,13 @@ $("#btntred").click(function()
             {
               $('#panelTrend').append(
                 "<img src='" + value['Poster'] +"'/>");
+               jQuery('.imgMovieT').addClass("hidden").viewportChecker({
+               classToAdd: 'visible animated hinge',
+               offset: 200
+             });
                jQuery('#panelTrend').addClass("hidden").viewportChecker({
                classToAdd: 'visible animated zoomIn',
-               offset: 200
+               offset: 300
              });
 
             }
@@ -156,19 +255,18 @@ $("#btnPop1").click(function(){
               $('#panelpop').append(
                 "<img src='" + value['Poster'] +"'/>");
                jQuery('#panelpop').addClass("hidden").viewportChecker({
-               classToAdd: 'visible animated slideInRight',
+               classToAdd: 'visible animated zoomInRight',
                offset: 200
              });
-
+             
             }
             count++;
               
             });
            
-            $('#show2Topic').animate({marginTop: +110},'slow','swing');
+            $('#show2Topic').animate({marginTop: +10},'slow','swing');
             $(".imgMovie").slideToggle(7000); 
 
-           
            
         });
 
@@ -220,7 +318,52 @@ $("#btnPop1").click(function(){
            
         });
        
-  });
+  
+
+
+$(".menus").click(function(){
+    if($(this).attr("id")=="pop")
+    {
+       $("html, body").animate({ scrollTop:0}, 1900);
+    }
+    else if($(this).attr("id")=="tred")
+    {
+       $("html, body").animate({ scrollTop: $('.show1').height()+165 }, 1900);
+    }
+    else if($(this).attr("id")=="anti")
+    {
+       $("html, body").animate({ scrollTop: ($('.show1').height()+160)+($('show2').height()+175) }, 1900);
+    }
+    else if($(this).attr("id")=="pla")
+    {
+       $("html, body").animate({ scrollTop: ($('.show1').height()+160)+($('.show2').height()+185)+($('.show3').height()+160) }, 1900);
+    }
+    
+});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
 

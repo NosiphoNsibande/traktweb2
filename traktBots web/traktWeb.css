@@ -2,7 +2,7 @@ body
 {
    width:100%;
    min-height:3500px;
-   background-image:url("images/0s2d1f5sfd.gif");
+   background-image:url("images/giphy.gif");
    background-attachment:fixed;
    background-position:center;
    background-repeat:no-repeat;
@@ -143,7 +143,7 @@ span
   width:240px;
   height:240px;
   border-radius:8%;
-  margin-top: 180px;
+  margin-top: 130px;
   margin-left:10px
 
 }
@@ -178,11 +178,19 @@ span
 {
    height:800px;
    margin-top:900px;
-   z-index: 9px;
+   z-index: 5px;
    width:100% ;
    position:absolute;
    background:rgb(51,51,51);
    opacity: 0.9;
+}
+.panelA img
+{
+  width: 240px;
+  height: 240px;
+  border-radius:50%;
+  margin-left:5px;
+  display:inline;
 }
 
 
@@ -205,8 +213,8 @@ span
 .show3
 {
    height:490px;
-   z-index: 9px;
-   margin-top:1680px;
+   z-index: 5px;
+   margin-top:1640px;
    width:100% ;
    position:absolute;
    background:rgb(66,49,49);
@@ -223,8 +231,8 @@ span
 .show4
 {
    height:480px;
-   z-index:9px;
-   margin-top:2150px;
+   z-index:5px;
+   margin-top:2130px;
    width:100% ;
    position:absolute;
    background:rgb(64,64,64);
